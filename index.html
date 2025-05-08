@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
   <style>
     body {
@@ -10,114 +10,220 @@
       margin: 40px;
     }
     .question {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    .feedback {
-      margin-top: 8px;
-      font-weight: bold;
-    }
-    .correct {
-      color: green;
-    }
-    .incorrect {
-      color: red;
+    button {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<h1>Quiz about Popistan</h1>
-
-<form id="quiz-form">
-  <!-- Example for Question 1 -->
-  <div class="question" id="q1-box">
-    <p>1. What is the capital of Popistan?</p>
-    <label><input type="radio" name="q1" value="Novoburg"> Novoburg</label><br>
-    <label><input type="radio" name="q1" value="Sita da Sma'ragdska"> Sita da Sma'ragdska</label><br>
-    <label><input type="radio" name="q1" value="Map"> Map</label><br>
-    <label><input type="radio" name="q1" value="Hinkel City"> Hinkel City</label>
-    <div class="feedback" id="feedback-q1"></div>
-  </div>
-
-  <!-- Repeat same structure for other questions -->
-  <!-- You can replace the below with your full list of questions -->
+  <h1>Quiz about Popistan</h1>
   
-  <!-- ... [REPEAT for q2 through q20, making sure to use: id="q2-box", id="feedback-q2", etc.] ... -->
+  <form id="quiz-form">
+    <div class="question">
+      <p>1. What is the capital of Popistan?</p>
+      <label><input type="radio" name="q1" value="Novoburg"> Novoburg</label><br>
+      <label><input type="radio" name="q1" value="Sita da Sma'ragdska"> Sita da Sma'ragdska</label><br>
+      <label><input type="radio" name="q1" value="Map"> Map</label><br>
+      <label><input type="radio" name="q1" value="Hinkel City"> Hinkel City</label>
+    </div>
 
-  <button type="button" onclick="checkAnswers()">Submit Answers</button>
-</form>
+    <div class="question">
+      <p>2. What is the oldest federal state of Popistan?</p>
+      <label><input type="radio" name="q2" value="Cōqelistan"> Cōqelistan</label><br>
+      <label><input type="radio" name="q2" value="Siqqelostan"> Siqqelostan</label><br>
+      <label><input type="radio" name="q2" value="Tssawaqia"> Tssawaqia</label><br>
+      <label><input type="radio" name="q2" value="Smaragdyn"> Smaragdyn</label>
+    </div>
 
-<p id="result"></p>
+    <div class="question">
+      <p>3. Who was the first president of Popistan?</p>
+      <label><input type="radio" name="q3" value="Message Lesbianmore"> Message Lesbianmore</label><br>
+      <label><input type="radio" name="q3" value="Paul-Alfred Äffsinger"> Paul-Alfred Äffsinger</label><br>
+      <label><input type="radio" name="q3" value="Dmjetr Arlahjov"> Dmjetr Arlahjov</label><br>
+      <label><input type="radio" name="q3" value="Leonid Asgard"> Leonid Asgard</label>
+    </div>
 
-<script>
-  function checkAnswers() {
-    const answers = {
-      q1: "Novoburg",
-      q2: "Siqqelostan",
-      q3: "Leonid Asgard",
-      q4: "Donetsk People's Republic",
-      q5: "a cultural union.",
-      q6: "Federal Republic of Popistan",
-      q7: "a state of Popistan.",
-      q8: "Abkhazia",
-      q9: "12th of June",
-      q10: "United States of America",
-      q11: "SOC",
-      q12: "Red",
-      q13: "German",
-      q14: "1",
-      q15: "KA",
-      q16: "Banderovshchyna",
-      q17: "Kžira",
-      q18: "Bulgaria",
-      q19: "Mäzdack",
-      q20: "Îrav'qlom"
-    };
+    <div class="question">
+      <p>4. Where did the first settlers of Vysakhovsk come from?</p>
+      <label><input type="radio" name="q4" value="Donetsk People's Republic"> Donetsk People's Republic</label><br>
+      <label><input type="radio" name="q4" value="Ukraine"> Ukraine</label><br>
+      <label><input type="radio" name="q4" value="Russia"> Russia</label><br>
+      <label><input type="radio" name="q4" value="Belarus"> Belarus</label>
+    </div>
 
-    const explanations = {
-      q1: "Novoburg is the modern capital, replacing Mäzdack.",
-      q2: "Siqqelostan was the first established entity on the Popistani continent.",
-      q3: "Leonid Asgard was the president from 2020 - 2025.",
-      q4: "The settlers of Vysakhovsk were from Donetsk and Mariupol.",
-      q5: "Tzakenistan is a cultural union between various Tzakeni (Jewish) settlements.",
-      q6: "The official name is Federal Republic of Popistan.",
-      q7: "Smaragdyn is currently a state of Popistan and abolished its monarchy in 2109.",
-      q8: "Abkhazia recognized Popistani independence before Ossetia did.",
-      q9: "Independence Day is celebrated on June 12th.",
-      q10: "The USA invaded Popistan four times.",
-      q11: "Popistan is in the Southern Ocean Coälition (SOC).",
-      q12: "Red is not on the current flag of Popistan.",
-      q13: "German is only spoken natively by the Popi people.",
-      q14: "The anthem begins with: 'Из руин она восстала'.",
-      q15: "Only the Communist Alliance (KA) is still legal.",
-      q16: "Popistan never recognized the Banderovshchyna.",
-      q17: "Kžira is an autonomous district of Nedariya.",
-      q18: "Bulgaria is not part of the BSCC.",
-      q19: "Mäzdack was the capital before Novoburg.",
-      q20: "Îrav'qlom is the oldest city on the continent."
-    };
+    <div class="question">
+      <p>5. Tzakenistan is</p>
+      <label><input type="radio" name="q5" value="a federal state."> a federal state.</label><br>
+      <label><input type="radio" name="q5" value="a cultural union."> a cultural union.</label><br>
+      <label><input type="radio" name="q5" value="a country."> a country.</label><br>
+      <label><input type="radio" name="q5" value="a fictional place."> a fictional place.</label>
+    </div>
 
-    let score = 0;
+    <div class="question">
+      <p>6. What is the official name of Popistan?</p>
+      <label><input type="radio" name="q6" value="Republic of Popistan"> Republic of Popistan</label><br>
+      <label><input type="radio" name="q6" value="Popistan"> Popistan</label><br>
+      <label><input type="radio" name="q6" value="Popi Republic"> Popi Republic</label><br>
+      <label><input type="radio" name="q6" value="Federal Republic of Popistan"> Federal Republic of Popistan</label><br>
+    </div>
 
-    for (const [key, correctAnswer] of Object.entries(answers)) {
-      const selected = document.querySelector(`input[name="${key}"]:checked`);
-      const feedback = document.getElementById(`feedback-${key}`);
-      if (!feedback) continue;
+    <div class="question">
+      <p>7. Smaragdyn is</p>
+      <label><input type="radio" name="q7" value="a colony of Popistan."> a colony of Popistan.</label><br>
+      <label><input type="radio" name="q7" value="a country."> a country.</label><br>
+      <label><input type="radio" name="q7" value="a state of Popistan."> a state of Popistan.</label><br>
+      <label><input type="radio" name="q7" value="an empire."> an empire.</label><br>
+    </div>
 
-      if (selected && selected.value === correctAnswer) {
-        score++;
-        feedback.textContent = `✅ Correct: ${explanations[key]}`;
-        feedback.className = "feedback correct";
-      } else {
-        feedback.textContent = `❌ Incorrect: ${explanations[key]}`;
-        feedback.className = "feedback incorrect";
+    <div class="question">
+      <p>8. Who was the first country to recognize Popistani independence?</p>
+      <label><input type="radio" name="q8" value="Russian Federation"> Russian Federation</label><br>
+      <label><input type="radio" name="q8" value="Russian Republic"> Russian Republic</label><br>
+      <label><input type="radio" name="q8" value="Abkhazia"> Abkhazia</label><br>
+      <label><input type="radio" name="q8" value="Ossetia"> Ossetia</label><br>
+    </div>
+
+    <div class="question">
+      <p>9. When is Popistani Independence Day celebrated?</p>
+      <label><input type="radio" name="q9" value="12th of July"> 12th of July</label><br>
+      <label><input type="radio" name="q9" value="12th of June"> 12th of June</label><br>
+      <label><input type="radio" name="q9" value="4th of April"> 4th of April</label><br>
+      <label><input type="radio" name="q9" value="6th of April"> 6th of April</label><br>
+    </div>
+
+    <div class="question">
+      <p>10. Which country invaded Popistan 4 times?</p>
+      <label><input type="radio" name="q10" value="Russian Federation"> Russian Federation</label><br>
+      <label><input type="radio" name="q10" value="Argentina"> Argentina</label><br>
+      <label><input type="radio" name="q10" value="Pakistan"> Pakistan (through Balochistan colony)</label><br>
+      <label><input type="radio" name="q10" value="United States of America"> United States of America</label><br>
+    </div>
+
+    <div class="question">
+      <p>11. Popistan is part of which subfaction within the Global Anti-Imperialist Coälition?</p>
+      <label><input type="radio" name="q11" value="AACC"> African Anti-Colonialist Coälition</label><br>
+      <label><input type="radio" name="q11" value="SOC"> Southern Ocean Coälition</label><br>
+      <label><input type="radio" name="q11" value="SACC"> South American and Caribbean Coälition</label><br>
+      <label><input type="radio" name="q11" value="Independent"> Popistan is an independent member.</label><br>
+    </div>
+
+    <div class="question">
+      <p>12. Which colour is NOT present on the Popistani national flag?</p>
+      <label><input type="radio" name="q12" value="Red"> Red</label><br>
+      <label><input type="radio" name="q12" value="Mikado Yellow"> Mikado Yellow</label><br>
+      <label><input type="radio" name="q12" value="White"> White</label><br>
+      <label><input type="radio" name="q12" value="Xanadu"> Xanadu</label><br>
+    </div>
+    
+    <div class="question">
+      <p>13. Which one of these statements is NOT correct?</p>
+      <label><input type="radio" name="q13" value="Russian"> Russian is the primary language of the Army of Saint George, the Popistani Navy, and the Popistani Aviators.</label><br>
+      <label><input type="radio" name="q13" value="English"> English is the primary language used when communicating with foreigners.</label><br>
+      <label><input type="radio" name="q13" value="German"> German is the primary language of communication spoken by everyone nationwide.</label><br>
+      <label><input type="radio" name="q13" value="Emerald"> Smaragdine and Padlian are the primary languages of the Popistani Space Force.</label><br>
+    </div>
+
+    <div class="question">
+      <p>14. What are the opening words of the Russian version of the Popistani national anthem?</p>
+      <label><input type="radio" name="q14" value="1"> Из руин она восстала</label><br>
+      <label><input type="radio" name="q14" value="2"> Из руин он восстала</label><br>
+      <label><input type="radio" name="q14" value="3"> Наш любимый Попистан</label><br>
+      <label><input type="radio" name="q14" value="4"> Вставай проклятьем заклейменный</label><br>
+    </div>
+
+    <div class="question">
+      <p>15. Which of these parties is still legally operating in Popistan?</p>
+      <label><input type="radio" name="q15" value="Reformists"> Reformist Party</label><br>
+      <label><input type="radio" name="q15" value="NLP"> Nedr Liberation Party</label><br>
+      <label><input type="radio" name="q15" value="CYP"> Cisyiminist Party (EPAP)</label><br>
+      <label><input type="radio" name="q15" value="KA"> Communist Alliance</label><br>
+    </div>
+
+    <div class="question">
+      <p>16. Which of these countries was never recognised as independent by Popistan?</p>
+      <label><input type="radio" name="q16" value="RWS"> Republic of West Setosia</label><br>
+      <label><input type="radio" name="q16" value="Banderovshchyna"> Banderovshchyna</label><br>
+      <label><input type="radio" name="q16" value="DPRP"> Democratic People's Republic of Popistan</label><br>
+      <label><input type="radio" name="q16" value="Zutha"> Republic of Zutha</label><br>
+    </div>
+
+    <div class="question">
+      <p>17. Which of these is not a STATE of Popistan?</p>
+      <label><input type="radio" name="q17" value="Yaxẋaşistan"> Yaxẋaşistan</label><br>
+      <label><input type="radio" name="q17" value="Myzhenia"> Myzhenia</label><br>
+      <label><input type="radio" name="q17" value="Kžira"> Kžira</label><br>
+      <label><input type="radio" name="q17" value="Sudului"> Sudului</label><br>
+    </div>
+
+    <div class="question">
+      <p>18. Which country is NOT a member of the BSCC?</p>
+      <label><input type="radio" name="q18" value="Bulgaria"> Bulgaria</label><br>
+      <label><input type="radio" name="q18" value="Ukraine"> Ukraine</label><br>
+      <label><input type="radio" name="q18" value="Novorossiya"> Novorossiya</label><br>
+      <label><input type="radio" name="q18" value="Romania"> Romania</label><br>
+    </div>
+
+    <div class="question">
+      <p>19. Which city in Town Center was the capital of Popistan before Novoburg?</p>
+      <label><input type="radio" name="q19" value="Korrät"> Korrät</label><br>
+      <label><input type="radio" name="q19" value="Alamzy"> Alamzy</label><br>
+      <label><input type="radio" name="q19" value="Xantingen"> Xantingen</label><br>
+      <label><input type="radio" name="q19" value="Mäzdack"> Mäzdack</label><br>
+    </div>
+
+    <div class="question">
+      <p>20. Which city in Siqqelostan is the oldest on the Popistani continent?</p>
+      <label><input type="radio" name="q20" value="Qanaket"> Qanaket</label><br>
+      <label><input type="radio" name="q20" value="Êfft"> Êfft</label><br>
+      <label><input type="radio" name="q20" value="Îrav'qlom"> Îrav'qlom</label><br>
+      <label><input type="radio" name="q20" value="Bortâ"> Bortâ</label><br>
+    </div>
+    
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "Novoburg",
+        q2: "Siqqelostan",
+        q3: "Leonid Asgard",
+        q4: "Donetsk People's Republic",
+        q5: "a cultural union.",
+        q6: "Federal Republic of Popistan",
+        q7: "a state of Popistan.",
+        q8: "Abkhazia",
+        q9: "12th of June",
+        q10: "United States of America",
+        q11: "SOC",
+        q12: "Red",
+        q13: "German",
+        q14: "1",
+        q15: "KA",
+        q16: "Banderovshchyna",
+        q17: "Kžira",
+        q18: "Bulgaria",
+        q19: "Mäzdack",
+        q20: "Îrav'qlom"
+      };
+
+      let score = 0;
+      for (const [key, value] of Object.entries(answers)) {
+        const selected = document.querySelector(input[name="${key}"]:checked);
+        if (selected && selected.value === value) {
+          score++;
+        }
       }
-    }
 
-    document.getElementById("result").textContent =
-      `You correctly answered ${score} out of ${Object.keys(answers).length} questions.`;
-  }
-</script>
+      document.getElementById("result").textContent =
+        You correctly answered ${score} out of ${Object.keys(answers).length} questions.;
+    }
+  </script>
 
 </body>
 </html>
