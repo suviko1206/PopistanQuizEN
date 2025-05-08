@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz about Popistan</h1>
+  
+  <form id="quiz-form">
+    <div class="question">
+      <p>1. What is the capital of Popistan?</p>
+      <label><input type="radio" name="q1" value="Novoburg"> Novoburg</label><br>
+      <label><input type="radio" name="q1" value="Sita da Sma'ragdska"> Sita da Sma'ragdska</label><br>
+      <label><input type="radio" name="q1" value="Map"> Map</label><br>
+      <label><input type="radio" name="q1" value="Hinkelstadt"> Hinkel City</label>
+    </div>
+
+    <div class="question">
+      <p>2. What is the oldest federal state of Popistan?</p>
+      <label><input type="radio" name="q2" value="Cōqelistan"> Cōqelistan</label><br>
+      <label><input type="radio" name="q2" value="Siqqelostan"> Siqqelostan</label><br>
+      <label><input type="radio" name="q2" value="Tschawakien"> Tssawaqia</label><br>
+      <label><input type="radio" name="q2" value="Smaragdyn"> Smaragdyn</label>
+    </div>
+
+    <div class="question">
+      <p>3. Who was the first president of Popistan?</p>
+      <label><input type="radio" name="q3" value="Message Lesbianmore"> Message Lesbianmore</label><br>
+      <label><input type="radio" name="q3" value="Paul-Alfred Äffsinger"> Paul-Alfred Äffsinger</label><br>
+      <label><input type="radio" name="q3" value="Dmjetr Arlahjov"> Dmjetr Arlahjov</label><br>
+      <label><input type="radio" name="q3" value="Leonid Asgard"> Leonid Asgard</label>
+    </div>
+
+    <div class="question">
+      <p>4. Where did the first settlers of Vysakhovsk come from?</p>
+      <label><input type="radio" name="q4" value="Volksrepublik Donezk"> Donetsk People's Republic</label><br>
+      <label><input type="radio" name="q4" value="Ukraine"> Ukraine</label><br>
+      <label><input type="radio" name="q4" value="Russland"> Russia</label><br>
+      <label><input type="radio" name="q4" value="Belarus"> Belarus</label>
+    </div>
+
+    <div class="question">
+      <p>5. Tzakenistan is</p>
+      <label><input type="radio" name="q5" value="ein Bundesstaat."> a federal state.</label><br>
+      <label><input type="radio" name="q5" value="ein kultureller Verband."> a cultural union.</label><br>
+      <label><input type="radio" name="q5" value="ein Land."> a country.</label><br>
+      <label><input type="radio" name="q5" value="ein fiktiver Ort."> a fictional place.</label>
+    </div>
+
+    <div class="question">
+      <p>6. What is the official name of Popistan?</p>
+      <label><input type="radio" name="q6" value="Republik Popistan"> Republic of Popistan</label><br>
+      <label><input type="radio" name="q6" value="Popistan"> Popistan</label><br>
+      <label><input type="radio" name="q6" value="Popische Republik"> Popi Republic</label><br>
+      <label><input type="radio" name="q6" value="Bundesrepublik Popistan"> Federal Republic of Popistan</label><br>
+    </div>
+
+    <div class="question">
+      <p>7. Smaragdyn is</p>
+      <label><input type="radio" name="q7" value="eine Kolonie Popistans."> a colony of Popistan.</label><br>
+      <label><input type="radio" name="q7" value="ein Land."> a country.</label><br>
+      <label><input type="radio" name="q7" value="ein Bundesstaat Popistans."> a state of Popistan.</label><br>
+      <label><input type="radio" name="q7" value="ein Kaiserreich."> an empire.</label><br>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "Novoburg",
+        q2: "Siqqelostan",
+        q3: "Leonid Asgard",
+        q4: "Volksrepublik Donezk",
+        q5: "ein kultureller Verband.",
+        q6: "Bundesrepublik Popistan",
+        q7: "ein Bundesstaat Popistans."
+      };
+
+      let score = 0;
+      for (const [key, value] of Object.entries(answers)) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === value) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent =
+        `You got ${score} out of ${Object.keys(answers).length} correct.`;
+    }
+  </script>
+
+</body>
+</html>
