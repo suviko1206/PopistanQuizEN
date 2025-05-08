@@ -211,19 +211,20 @@
         q19: "Mäzdack",
         q20: "Îrav'qlom"
       };
-
+  
       let score = 0;
       for (const [key, value] of Object.entries(answers)) {
-        const selected = document.querySelector(input[name="${key}"]:checked);
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
         if (selected && selected.value === value) {
           score++;
         }
       }
-
+  
       document.getElementById("result").textContent =
-        You correctly answered ${score} out of ${Object.keys(answers).length} questions.;
+        `You correctly answered ${score} out of ${Object.keys(answers).length} questions.`;
     }
   </script>
+
 
 </body>
 </html>
