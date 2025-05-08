@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz</title>
+<style>
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
@@ -25,30 +26,20 @@
   </style>
 </head>
 <body>
-
 <h1>Quiz about Popistan</h1>
-
 <form id="quiz-form">
-  <!-- Example for Question 1 -->
-  <div class="question" id="q1-box">
-    <p>1. What is the capital of Popistan?</p>
-    <label><input type="radio" name="q1" value="Novoburg"> Novoburg</label><br>
-    <label><input type="radio" name="q1" value="Sita da Sma'ragdska"> Sita da Sma'ragdska</label><br>
-    <label><input type="radio" name="q1" value="Map"> Map</label><br>
-    <label><input type="radio" name="q1" value="Hinkel City"> Hinkel City</label>
-    <div class="feedback" id="feedback-q1"></div>
-  </div>
-
-  <!-- Repeat same structure for other questions -->
-  <!-- You can replace the below with your full list of questions -->
-  
-  <!-- ... [REPEAT for q2 through q20, making sure to use: id="q2-box", id="feedback-q2", etc.] ... -->
-
-  <button type="button" onclick="checkAnswers()">Submit Answers</button>
+<div class="question" id="q1-box">
+<p>1. What is the capital of Popistan?</p>
+<label><input name="q1" type="radio" value="Novoburg"/> Novoburg</label><br/>
+<label><input name="q1" type="radio" value="Sita da Sma'ragdska"/> Sita da Sma'ragdska</label><br/>
+<label><input name="q1" type="radio" value="Map"/> Map</label><br/>
+<label><input name="q1" type="radio" value="Hinkel City"/> Hinkel City</label>
+<div class="feedback" id="feedback-q1"></div>
+</div>
+<!-- PLACEHOLDER FOR QUESTIONS 2-20 -->
+<button onclick="checkAnswers()" type="button">Submit Answers</button>
 </form>
-
 <p id="result"></p>
-
 <script>
   function checkAnswers() {
     const answers = {
@@ -118,6 +109,5 @@
       `You correctly answered ${score} out of ${Object.keys(answers).length} questions.`;
   }
 </script>
-
 </body>
 </html>
