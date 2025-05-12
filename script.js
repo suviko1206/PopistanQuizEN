@@ -1,4 +1,3 @@
-<script>
     function checkAnswers() {
       const answers = {
         q1: "Novoburg",
@@ -54,4 +53,3 @@
       document.getElementById("result").textContent =
         `You correctly answered ${score} out of ${Object.keys(answers).length} questions.`;
     }
-  </script>
