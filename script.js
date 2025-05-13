@@ -118,3 +118,36 @@ function checkAnswers() {
   document.getElementById("result").textContent =
     `You correctly answered ${score} out of ${Object.keys(answers).length} questions.`;
 }
+
+.navbar {
+  background-color: #001f3f; /* deep navy */
+  padding: 12px 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffdd57; /* highlight on hover */
+}
+
