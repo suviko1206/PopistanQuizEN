@@ -42,13 +42,22 @@ function checkAnswers() {
     q40: "Chinese"
   };
 
+  const explanations = {
+    q1: "Novoburg is the current capital of Popistan. It replaced the city of Mäzdack upon independence in 2020.",
+    q2: "Siqqelostan is the oldest political entity on the Popistani continent.",
+    q3: "Leonid Asgard was the transitional president of Popistan from 2020 until the first election in 2025.",
+    q4: "Vysakhovsk was settled by monarchists from the cities of Donetsk and Mariupol in the DPR in 1924.",
+    q5: "Tzakenistan is officially classified as a cultural union within the Popistani constitution.",
+    // ... up to q40
+  };
+  
   let score = 0;
 
   for (const [key, correctAnswer] of Object.entries(answers)) {
     const questionDiv = document.querySelector(`input[name="${key}"]`).closest('.question');
     const selected = document.querySelector(`input[name="${key}"]:checked`);
-    
-    // Remove previous feedback, if any
+
+    // Remove previous feedback
     const oldFeedback = questionDiv.querySelector('.feedback');
     if (oldFeedback) oldFeedback.remove();
 
@@ -58,14 +67,14 @@ function checkAnswers() {
     if (selected) {
       if (selected.value === correctAnswer) {
         score++;
-        feedback.textContent = "✅ Correct";
+        feedback.innerHTML = "✅ Correct<br><em>" + explanations[key] + "</em>";
         feedback.style.color = "green";
       } else {
-        feedback.textContent = `❌ Incorrect — Correct answer: ${correctAnswer}`;
+        feedback.innerHTML = "❌ Incorrect<br><em>" + explanations[key] + "</em>";
         feedback.style.color = "red";
       }
     } else {
-      feedback.textContent = `⚠️ No answer — Correct answer: ${correctAnswer}`;
+      feedback.innerHTML = `⚠️ No answer<br><em>${explanations[key]}</em>`;
       feedback.style.color = "orange";
     }
 
