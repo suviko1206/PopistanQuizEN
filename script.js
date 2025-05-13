@@ -76,7 +76,7 @@ function checkAnswers() {
     q31: "The original colonial settlers of Jarharat came from Liechtenstein.",
     q32: "Prilius Island in the Nether Exclaves is the northernmost point of Popistan.",
     q33: "The SOC and BSCAI (now BSCC) united to form the Global Anti-Imperialist Coälition (GAIC).",
-    q34: "Randomistan is a state of Popistan".,
+    q34: "Randomistan is a state of Popistan.",
     q35: "Leyingen was settled by Popis.",
     q36: "The Saar Revolts occurred in the 2060s with French and Belgian support.",
     q37: "The Russian Federation never controlled Popistan.",
